@@ -4,6 +4,10 @@
 
 <h1>Author List</h1>
 
+<a href="{% url 'author_create' %}" class="btn btn-danger ">
+  Create Author 
+</a>
+
 {% if author_list %}
   <ul>
 
@@ -11,6 +15,12 @@
     <li>
       <a href="{{ author.get_absolute_url }}">
       {{ author }} ({{author.date_of_birth}} - {% if author.date_of_death %}{{author.date_of_death}}{% endif %})
+      </a>
+      <a href="{{ author.get_delete_url }}" class="btn btn-danger btn-sm">
+        Delete 
+      </a>
+      <a href="{{ author.get_update_url }}" class="btn btn-primary btn-sm">
+        Edit 
       </a>
     </li>
   {% endfor %}

@@ -52,6 +52,14 @@ class Book(models.Model):
         """Returns the url to access a particular book instance."""
         return reverse('book-detail', args=[str(self.id)])
 
+    def get_delete_url(self):
+        """Returns the url to access a particular book instance."""
+        return reverse('book_delete', args=[str(self.id)])
+
+    def get_update_url(self):
+        """Returns the url to access a particular book instance."""
+        return reverse('book_update', args=[str(self.id)])
+
     def __str__(self):
         """String for representing the Model object."""
         return self.title
@@ -114,6 +122,14 @@ class Author(models.Model):
     def get_absolute_url(self):
         """Returns the url to access a particular author instance."""
         return reverse('author-detail', args=[str(self.id)])
+
+    def get_delete_url(self):
+        """Returns the url to access a particular author instance."""
+        return reverse('author_delete', args=[str(self.id)])
+
+    def get_update_url(self):
+        """Returns the url to access a particular author instance."""
+        return reverse('author_update', args=[str(self.id)])
 
     def __str__(self):
         """String for representing the Model object."""
